@@ -38,8 +38,10 @@ class Credential:
         purpose = '12381'
         coin_type = '3600'
         account = str(index)
-        withdrawal_key_path = f'm/{purpose}/{coin_type}/{account}/0'
-        self.signing_key_path = f'{withdrawal_key_path}/0'
+        withdrawal_key_path = f'm/{purpose}/{coin_type}/{account}/0/0'
+        self.signing_key_path = f'{withdrawal_key_path}'
+        # withdrawal_key_path = f'm/{purpose}/{coin_type}/{account}/0'
+        # self.signing_key_path = f'{withdrawal_key_path}/0'
 
         self.withdrawal_sk = mnemonic_and_path_to_key(
             mnemonic=mnemonic, path=withdrawal_key_path, password=mnemonic_password)
